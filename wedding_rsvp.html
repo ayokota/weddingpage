@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akiyo & Isabelle's Wedding RSVP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-family: cursive;
+            background-image: url('background.jpg'); /* Background image URL */
+            background-repeat: repeat; /* Repeat the background image */
+        }
+        h1 {
+            color: #ff69b4;
+            border-radius: 20px;
+            font-family: cursive !important; 
+            font-size: 27px !important;
+            font-weight: bolder;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+        .details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .details td {
+            padding: 5px 0;
+        }
+        .details td:first-child {
+            padding-right: 10px;
+        }
+        .rsvp {
+            margin-top: 20px;
+        }
+        .rsvp textarea {
+            width: calc(100% - 22px); /* Adjusted width to account for padding and border */
+            padding: 10px;
+            margin: 10px 0;
+            border: 3px solid lightblue;
+            border-radius: 25px;
+            resize: none;
+            box-sizing: border-box; /* Ensures padding and border are included in width calculation */
+        }
+        textarea:focus {
+            border-color: darkblue; /* Change border color on focus */
+            outline: none; /* Remove default focus outline */
+        }
+        .rsvp button {
+            width: 100%;
+            background-color: lightblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .rsvp button:hover {
+            background-color: darkblue;
+        }
+        .rounded-text {
+            display: inline-block;
+            background-color: white; /* Light red background color */
+            border: 3px solid lightblue;
+            padding: 10px 10px; /* Adjust padding as needed */
+            border-radius: 15px; /* Rounded corners */
+            color: #333; /* Text color */
+            font-size: 11px; /* Font size */
+            font-weight: bold;
+            font-family: Arial, sans-serif; /* Font family */
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .rsvp button {
+                padding: 15px;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="rounded-text">Akiyo & Isabelle's Wedding</h1>
+        <div class="details">
+            <table>
+                <tr>
+                    <td><p class="rounded-text">Date:</p></td>
+                    <td><p class="rounded-text">April 20th, 2025</p></td>
+                </tr>
+                <tr>
+                    <td><p class="rounded-text">Location:</p></td>
+                    <td><p class="rounded-text">Kauai (exact location TBD)</p></td>
+                </tr>
+                <tr>
+                    <td><p class="rounded-text">Dress Code:</p></td>
+                    <td><p class="rounded-text">No dress code</p></td>
+                </tr>
+                <tr>
+                    <td><p class="rounded-text">RSVP:</p></td>
+                    <td><p class="rounded-text">Please Fill out form below, or manually email to <a href="mailto:akiyo.isabelle.wedding.2025@gmail.com">akiyo.isabelle.wedding.2025@gmail.com</a> with a list of people attending.</p></td>
+                </tr>
+                <tr>
+                    <td><p class="rounded-text">RSVP Deadline:</p></td>
+                    <td><p class="rounded-text">December 20th, 2024</p></td>
+                </tr>
+            </table>
+        </div>
+        <div class="rsvp">
+            <h2 class="rounded-text">RSVP Form</h2>
+            <textarea class="rsvp-text-area" id="message" rows="4" placeholder="List of people attending"></textarea>
+            <button onclick="sendRSVP()">Send RSVP</button>
+        </div>
+    </div>
+
+    <script>
+        function sendRSVP() {
+            var message = document.getElementById('message').value;
+            var subject = "Akiyo & Isabelle's wedding RSVP";
+            var body = "List of people attending Akiyo & Isabelle's wedding:\n " + message;
+
+            window.location.href = "mailto:akiyo.isabelle.wedding.2025@gmail.com?cc=akiyo.yokota@gmail.com,isabelle.velasco97@gmail.com&subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        }
+    </script>
+</body>
+</html>
